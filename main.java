@@ -1,26 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package domain;
 
 import domain.ContaBancaria.SaldoInsuficienteException;
 import java.io.IOException;
 
-/**
- *
- * @author Leandro
- */
 public class main{
-    public static void main(String[] args) throws IOException, ContaBancaria.SaldoInsuficienteException{
+    public static void main(String[] args){
         ContaBancaria conta1 = new ContaBancaria("Juninho", 2000);
-        try{
-            conta1.sacar(3000);
-            System.out.println("Operação de saque finalizada");
-        }catch(SaldoInsuficienteException e){
-            System.out.println("Operação não ralizada: "+ e.getMessage());
-
+        try {
+            conta1.sacar(100);
+            conta1.sacar(-50);
+            conta1.sacar(200);
+            System.out.println("Fim do try");
+        } catch (RuntimeException e) {
+            System.out.println("Runtime: " + e.getMessage());
+        } catch (SaldoInsuficienteException e) {
+            System.out.println("Saldo: " + e.getMessage());
+        }finally{ 
+            //o finally sempre executa não importa o que aconteça, você também pode utilizar o try e finally sem o catch.
+            System.out.println("Fechando recurso de saque.");
         }
+
 
     }
 }

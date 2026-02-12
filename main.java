@@ -1,7 +1,7 @@
 
 package domain;
 
-import domain.ContaBancaria.SaldoInsuficienteException;
+
 import java.io.IOException;
 
 public class main{

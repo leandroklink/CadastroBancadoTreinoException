@@ -25,10 +25,6 @@ public class ContaBancaria {
     public double getSaldo(){
         return saldo;
     }
-    public class SaldoInsuficienteException extends Exception {
-    public SaldoInsuficienteException(String mensagem) {
-        super(mensagem);
-    }
-}
+
 
 }
